@@ -1,9 +1,10 @@
 {
-  "name": "node-monit",
-  "version": "0.0.1",
+  "name": "nsc-client",
+  "version": "0.0.2",
   "main"  : "server.js",
   "dependencies": {
-    "os-utils": "*",
-    "express" : "*"
+    "os-utils"    : "*",
+    "express"     : "*",
+    "node-linux"  : "*"
   }
 }

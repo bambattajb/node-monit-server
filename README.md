@@ -1,6 +1,6 @@
-# Simple client REST API for retrieving system data
+# Simple REST API used for collecting system resource data
 
-This is a simple REST API intended to run on a Linux VPS which provides a set of endpoints that return details of hardware and software states.
+This is a simple REST API intended to run on a Linux VPS which provides a set of API endpoints that return data on hardware and software usage.
 
 The reason I have built this is because we use a 3rd party monitoring system that can make a request to a URL and trigger an alert if a specific response is given.
 
@@ -12,9 +12,24 @@ Although this depends on the `os-utils` npm package, I have had to adapt this to
 
 Assuming you have `NodeJS` and `NPM` installed, download this package and run
 
-`node server.js`
+````
+npm install
+````
 
-That will start a server on port `9090`
+Next, run the following command to create the service deamon
+
+````
+node install.js
+````
+
+Now you can run the app as a service daemon
+
+````
+sudo service nscclient start
+sudo service nscclient stop
+````
+
+Starting the service will create a web server server on port `9090`
 
 ##API
 
@@ -94,3 +109,7 @@ localhost:9090/api/system/load/[period (accepts 1, 5, 15)]
 ````
 localhost:9090/api/service/[linux job (ie... nginx, mysql)]
 ````
+
+### Update Log
+0.0.1 - First commit
+0.0.2 - Added ability to use as Linux Service
